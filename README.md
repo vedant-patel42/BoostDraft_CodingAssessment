@@ -26,7 +26,7 @@ To build and run this project, you need to have the following installed:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/BoostDraftCodingAssignment.git
+    git clone https://github.com/vedant-patel42/BoostDraft_CodingAssessment.git
     cd BoostDraftCodingAssignment
     ```
 
