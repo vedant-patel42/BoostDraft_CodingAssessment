@@ -14,19 +14,19 @@ public class BoostDraftCodingAssignment {
         ArrayList<TestCase> testCaseList = new ArrayList<>();
         testCaseList.add(new TestCase("<Design><Code>hello world</Code></Design>", true));//normal case
         testCaseList.add(new TestCase("<Design><Code>hello world</Code></Design></People>", false));//no closing tag for "People"
-        testCaseList.add(new TestCase("<People><Design><Code>hello world</People></Code></Design>", false));// "/Code" should come before "/People" 
+        testCaseList.add(new TestCase("<People><Design><Code>hello world</People></Code></Design>", false));// "Code" should come before "/People" 
         testCaseList.add(new TestCase("<People age=\"1\">hello world</People>", false));//there is no closing tag for "People age="1"" and no opening tag for "/People"
         testCaseList.add(new TestCase("<root></root>", true));//there is an empty string in valid tag.
         testCaseList.add(new TestCase("<root><child></child></root>", true));//there is an empty string with two valid nested tags.
         testCaseList.add(new TestCase("<root><child></root>", false));//there is an empty string with missing closing tag.
-        testCaseList.add(new TestCase("<tutorial date=\"01/01/2000\">XML</tutorial>", false));
-        testCaseList.add(new TestCase("<root><child attr=\"value\"></child></root>", false));
-        testCaseList.add(new TestCase("<root><!-- Comment --><child></child></root>", true));
-        testCaseList.add(new TestCase("<root><child/><child/></root>", true));
-        testCaseList.add(new TestCase("<root><child>", false));
-        testCaseList.add(new TestCase("<root/>", true));
-        testCaseList.add(new TestCase("<root>   <child>   </child>  </root>", true));
-        testCaseList.add(new TestCase("</>", false)); 
+        testCaseList.add(new TestCase("<tutorial date=\"01/01/2000\">XML</tutorial>", false));  //invalid tag with an attribute
+        testCaseList.add(new TestCase("<root><child attr=\"value\"></child></root>", false));   //invalid tag with an attribute
+        testCaseList.add(new TestCase("<root><!-- Comment --><child></child></root>", true));   //valid xml string with comments
+        testCaseList.add(new TestCase("<root><child/><child/></root>", true));   //valid self closing tag
+        testCaseList.add(new TestCase("<root><child>", false));                  //missing closing tag
+        testCaseList.add(new TestCase("<root/>", true));                         //valid self closing tag
+        testCaseList.add(new TestCase("<root>   <child>   </child>  </root>", true)); // valid string with whitespaces
+        testCaseList.add(new TestCase("</>", false));     // Missing tagname 
 
         int failedCount = 0;
         for (int i = 0; i < testCaseList.size(); i++)
