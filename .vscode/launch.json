@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "BoostDraftCodingAssignment",
+            "request": "launch",
+            "mainClass": "boostdraftcodingassignment.BoostDraftCodingAssignment",
+            "projectName": "BoostDraftCodingAssignmentJava_1265cc11"
+        },
+        {
+            "type": "java",
+            "name": "Launch BoostDraftCodingAssignment",
+            "request": "launch",
+            "mainClass": "boostdraftcodingassignment.BoostDraftCodingAssignment",
+            "projectName": "BoostDraftCodingAssignment"
+        }
+    ]
+}
